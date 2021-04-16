@@ -1,14 +1,13 @@
 const express = require("express");
 
+const usersController = require("../controllers/users-controller");
+
 const router = express.Router();
 
-const DUMMY_USERS = [
-  {
-    id: "u1",
-    name: "el nigga",
-  },
-];
+router.get("/", usersController.getUsers);
 
-//router.get('/user/:uid')
+router.post("/signup", usersController.signup);
+
+router.post("/login", usersController.login);
 
 module.exports = router;
